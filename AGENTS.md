@@ -26,7 +26,7 @@ The How it works hero uses celcn-daycare-dropoff.png, a generated African Americ
 
 Keep the shared marketing header fixed at the top during scrolling, using solid teal once scrolled. Reserve its layout space and offset anchors and sticky section introductions below it.
 
-About us includes the three supplied portraits in a dedicated Our people section. Names and roles are not supplied; do not invent them. Publishing target is Cloudflare, not GitHub Pages; GitHub remains the source repository.
+About us includes Hamilton chapter directors: portrait 1 (patterned dress) is Yvonne Otiteh; portrait 2 (cream-and-black cardigan) is Jennifer Pere Ajuwa; portrait 3 (cream coat) is Isoken Sikpojie. Use the user-supplied qualifications without adding credentials. Hamilton chapter contact: 191 King Williams Street, Hamilton ON L8R 1A7; canadaearlylearning.kingwilliams@mail.com; 437 727 3420. Publishing target is Cloudflare, not GitHub Pages; GitHub remains the source repository.
 
 Pricing has a dedicated /pricing page linked from the header, drawer, and footer. The user authorised sample rates to update later: CAD 149, 399, and 799 per month for the three organisation sizes. Keep these explicitly provisional and subject to change, with inclusions unconfirmed and enquiry-only actions (no checkout).
 
