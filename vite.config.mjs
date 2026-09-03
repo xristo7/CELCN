@@ -22,7 +22,7 @@ export default defineConfig({
       enforce: "pre",
       transform(code, id) {
         if (process.env.GITHUB_PAGES !== "true" || !id.endsWith(".jsx")) return;
-        return code.replace(/(["'])\/(?!\/)([^"']*)\1/g, (_, quote, path) => `${quote}/CELCN/${path}${quote}`);
+        return code.replace(/(["'])\/(?!\/)([a-zA-Z0-9/#?=&._-]*)\1/g, (_, quote, path) => `${quote}/CELCN/${path}${quote}`);
       },
     },
     react(),
