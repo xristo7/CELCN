@@ -26,6 +26,8 @@ The How it works hero uses celcn-daycare-dropoff.png, a generated African Americ
 
 Keep the shared marketing header fixed at the top during scrolling, using solid teal once scrolled. Reserve its layout space and offset anchors and sticky section introductions below it.
 
+About us includes the three supplied portraits in a dedicated Our people section. Names and roles are not supplied; do not invent them. Publishing target is Cloudflare, not GitHub Pages; GitHub remains the source repository.
+
 Pricing has a dedicated /pricing page linked from the header, drawer, and footer. The user authorised sample rates to update later: CAD 149, 399, and 799 per month for the three organisation sizes. Keep these explicitly provisional and subject to change, with inclusions unconfirmed and enquiry-only actions (no checkout).
 
 Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts/prepare-sites-build.mjs`, and `tests/sites-worker.test.mjs` intact so the same local prototype can be handed to Sites. Before a Sites handoff, run `npm run build` and `npm run test:sites`; the build must leave `dist/client/index.html`, `dist/server/index.js`, and `dist/.openai/hosting.json`.

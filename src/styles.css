@@ -64,3 +64,4 @@ h1 span{display:block;white-space:nowrap}.story{padding-top:55px;padding-bottom:
 .shared-header .brand-name{transition:font-size .25s ease}
 .site-header.scrolled-header .brand-name{font-size:32px}
 @media(max-width:820px){.site-header.shared-header.scrolled-header{height:68px}.site-header.scrolled-header .brand-name{font-size:28px}}
+.about-people{background:var(--cream)}.about-portraits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:40px}.about-portraits figure{margin:0;overflow:hidden;border-radius:14px;background:#e8e5da}.about-portraits img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 35%}@media(max-width:680px){.about-portraits{grid-template-columns:1fr;max-width:420px;margin-inline:auto;gap:24px}}
