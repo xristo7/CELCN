@@ -11,7 +11,7 @@ const faqs = [
   ["Are CELCN services accessible to all families?", "Yes. Our founding mission is to ensure equitable access to early childhood education for children from all socio-economic backgrounds, strengthening families and local communities."],
   ["How does CELCN align with the Canada Growth Plan and early learning frameworks?", "Our programs and network adhere to provincial licensing standards and national childcare growth strategies, promoting high-quality, play-based early education, affordable access, and community well-being."],
   ["How can childcare operators join or open a new chapter?", "We partner with local educators, centre operators, and community leaders looking to expand high-quality early care. Contact us to learn about affiliating an existing centre or opening a new CELCN chapter."],
-  ["Where are CELCN chapters currently located?", "We currently operate in Ontario communities, including our active Hamilton chapter at 191 King Williams Street and developing locations in Ottawa and surrounding regions."],
+  ["Where are CELCN chapters currently located?", "We currently operate in Ontario communities, including our active Hamilton chapter at 191 King Williams Street and our Ottawa chapter at 1 Roydon Place (Units 101 & 102)."],
 ];
 
 export function ClientSections({ onEnquire }) {
@@ -100,7 +100,8 @@ export function ClientSections({ onEnquire }) {
         <article>
           <span>Ontario</span>
           <h3>Ottawa</h3>
-          <p>Roydon Avenue</p>
+          <p>1 Roydon Place Unit 101 &amp; 102</p>
+          <a className="text-link" href="/about#ottawa-chapter">Meet the chapter</a>
         </article>
         <article>
           <span>Ontario</span>
@@ -108,7 +109,7 @@ export function ClientSections({ onEnquire }) {
           <p>191 King Williams Street</p>
           <a className="text-link" href="/about#hamilton-chapter">Meet the chapter</a>
         </article>
-        <small>Explore the Hamilton chapter’s directors and contact details. Ottawa service availability is to be confirmed.</small>
+        <small>Explore chapter directors, facilities, and contact details across our Ontario locations.</small>
       </div>
     </section>
 
