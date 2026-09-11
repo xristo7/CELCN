@@ -8,7 +8,9 @@ When implementing from a selected generated mock, treat that image as the source
 
 Selected direction: immersive full-bleed childcare photography, deep-teal overlay, oversized mission-led type, warm yellow CTAs, and cream editorial story sections. Keep CELCN brand colours even when using CEY Childcare as structural inspiration.
 
-Content and identity are modeled after CEY Childcare (ceychildcare.com): mission pillars focus on securing children's futures, inclusive early education for all, and alignment with the Canada Growth Plan and national early learning frameworks. Programs highlight three age categories: Infants (under 18 months), Toddlers (18 months – 2.5 years), and Preschool (2.5 – 4 years), alongside integrated digital centre support.
+The user approved restructuring the public CELCN website around the information architecture and section rhythm of CEY Childcare (ceychildcare.com). Use CEY as the structural/content-topic reference, but rewrite headings and descriptions into original CELCN language rather than copying prose. Preserve CELCN's existing theme, colours, typography direction, components, imagery, people, names, chapter addresses, phone numbers, emails, and other CELCN-specific facts. The public homepage should read childcare-first: hero → introduction → mission/vision → programs → learning approach → why early years matter → chapters/community → platform support where appropriate → involvement CTA → footer.
+
+Content and identity are modeled after CEY Childcare (ceychildcare.com): mission pillars focus on securing children's futures, inclusive early education for all, and alignment with the Canada Growth Plan and national early learning frameworks. Programs highlight three age categories: Infants (under 18 months), Toddlers (18 months – 2.5 years), and Preschool (2.5 – 4 years). Keep SaaS/platform messaging secondary to the childcare/network story on the public homepage.
 
 The platform marketing section uses the user-supplied full dashboard image (`public/assets/celcn-dashboard.png`) in place of the original three-metric mock. Preserve the image and offer an enlarged preview; it is not a live dashboard.
 
