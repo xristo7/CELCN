@@ -99,12 +99,12 @@ body:has(.shared-header) footer>.footer-top{gap:26px;flex-wrap:nowrap}body:has(.
 .footer-top{justify-content:space-between;gap:42px}
 .footer-lockup{display:flex;align-items:center;gap:26px;flex:0 1 auto}
 .footer-top>.footer-lockup>p{margin:0;padding-left:26px;border-left:1px solid #cfc8b8;font:700 18px/1.25 "Baloo 2","DM Sans",sans-serif;color:var(--teal);white-space:nowrap}
-.subscribe-form{width:min(500px,42vw);margin-left:auto}
+.subscribe-form{display:block;width:min(620px,46vw);margin:0 0 0 auto}
 .subscribe-form label{display:block;margin-bottom:8px;font:700 18px/1.2 "Baloo 2","DM Sans",sans-serif;color:var(--teal)}
 .subscribe-form>div{display:flex}
-.subscribe-form input{min-width:0;flex:1;height:50px;padding:0 18px;border:1px solid #b9c5bd;border-right:0;border-radius:12px 0 0 12px;background:#fff;font:500 15px "DM Sans",sans-serif;color:var(--ink);outline:none}
+.subscribe-form input{min-width:220px;flex:1 1 360px;height:50px;padding:0 18px;border:1px solid #b9c5bd;border-right:0;border-radius:12px 0 0 12px;background:#fff;font:500 15px "DM Sans",sans-serif;color:var(--ink);outline:none}
 .subscribe-form input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgb(0 100 103 / 12%)}
-.subscribe-form .button{height:50px;padding:0 20px;border-radius:0 12px 12px 0;white-space:nowrap}
+.subscribe-form .button{width:auto;flex:0 0 auto;height:50px;margin:0;padding:0 24px;border-radius:0 12px 12px 0;white-space:nowrap}
 .subscribe-form small{display:block;margin-top:7px;color:#65777a;font-size:12px}
 .footer-top>.subscribe-success{display:flex;align-items:center;gap:9px;margin:0 0 0 auto;padding:14px 20px;border:0;border-radius:12px;background:#e5f3ed;color:var(--teal);font:700 17px "Baloo 2","DM Sans",sans-serif}
 body:has(.shared-header) footer>.footer-top{gap:42px}
