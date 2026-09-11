@@ -8,7 +8,6 @@ import { ContactPage } from "./ContactPage.jsx";
 import { PricingPage } from "./PricingPage.jsx";
 import { AboutPage } from "./AboutPage.jsx";
 
-
 export function App() {
   useEffect(() => {
     if (!window.location.hash) return;
@@ -29,15 +28,16 @@ function LandingPage() {
   const openDialog = () => { window.location.assign("/contact"); };
   return <main>
     <section className="hero" id="home">
-      <img className="hero-image" src="/assets/celcn-hero.png" alt="An educator and two children building with wooden blocks"/><div className="hero-shade"/>
+      <img className="hero-image" src="/assets/celcn-hero.png" alt="An educator and two children building with wooden blocks" />
+      <div className="hero-shade" />
       <SiteHeader overlay />
       <div className="hero-content">
         <p className="eyebrow">Explore · Discover · Learn · Thrive</p>
-        <h1><span>Inclusive, accessible &amp;</span><span>innovative early care</span><span>for every child.</span></h1>
-        <p className="hero-copy">Nurturing tomorrow’s leaders. CELCN connects high-quality, play-based childhood education, community chapters, and modern centre tools so children can thrive across Canada.</p>
+        <h1><span>Stronger beginnings.</span><span>Brighter futures.</span><span>For every child.</span></h1>
+        <p className="hero-copy">CELCN brings inclusive early learning, nurturing childcare, community leadership, and thoughtful centre support together so children and families can flourish.</p>
         <div className="actions">
-          <button className="button button-gold" onClick={openDialog}>Get started</button>
-          <a className="button button-outline" href="#programs">Explore programs</a>
+          <button className="button button-gold" onClick={openDialog}>Contact us</button>
+          <a className="button button-outline" href="#chapters">Explore chapters</a>
         </div>
       </div>
       <a className="scroll-cue" href="#about">Discover CELCN <span>↓</span></a>
@@ -46,76 +46,106 @@ function LandingPage() {
     <section className="story section" id="about">
       <div className="story-copy">
         <p className="kicker">Nurturing Tomorrow's Leaders</p>
-        <h2>Building brighter futures for every child</h2>
-        <p>CELCN believes in a future where every child, regardless of socio-economic background, has access to quality early childhood education. As a dedicated community network, we provide inclusive, accessible, and innovative early learning solutions aligned with Canada’s vision for equitable early development.</p>
-        <p>Through collaborative play, creative discovery, and supportive environments, we help children reach their social, emotional, and cognitive milestones with joy and confidence.</p>
-        <a className="text-link" href="/about">Our mission and approach</a>
+        <h2>Creating stronger foundations for every child.</h2>
+        <p>CELCN believes every child should have access to high-quality early childhood education, regardless of background or circumstance. We create welcoming learning environments that support children, empower families, and strengthen the communities around them.</p>
+        <p>Our approach blends responsive care, collaborative play, imaginative discovery, and age-appropriate learning so children can grow socially, emotionally, physically, and cognitively with confidence.</p>
+        <a className="text-link" href="/about">Learn about CELCN</a>
       </div>
       <figure className="story-image">
-        <img src="/assets/celcn-story.png" alt="An educator helping a child with a classroom activity"/>
-        <figcaption>Practical support and nurturing care for every child’s formative years.</figcaption>
+        <img src="/assets/celcn-story.png" alt="An educator helping a child with a classroom activity" />
+        <figcaption>Thoughtful care and meaningful learning throughout the formative years.</figcaption>
       </figure>
+    </section>
+
+    <section className="client-benefits section" aria-labelledby="foundation-title">
+      <p className="kicker">What Guides Our Work</p>
+      <h2 id="foundation-title">A clear commitment to children, families, and communities.</h2>
+      <div className="benefit-columns">
+        <article>
+          <span className="section-number">01 / Children's Futures</span>
+          <h3>Opportunity from the very beginning.</h3>
+          <p>We work toward a future where every child can benefit from quality early learning and the secure foundation it creates for later life.</p>
+        </article>
+        <article>
+          <span className="section-number">02 / Inclusive Access</span>
+          <h3>Early learning that welcomes every family.</h3>
+          <p>Our network is shaped around accessible, inclusive care that respects the needs, circumstances, and diversity of the families we serve.</p>
+        </article>
+        <article>
+          <span className="section-number">03 / Community Growth</span>
+          <h3>Childcare that strengthens more than one child.</h3>
+          <p>By supporting families, educators, and local partners together, quality early education becomes a stronger foundation for the wider community.</p>
+        </article>
+      </div>
+    </section>
+
+    <section className="workflow-section section" aria-labelledby="mission-title">
+      <div className="section-intro">
+        <div>
+          <p className="kicker">Our Mission</p>
+          <h2 id="mission-title">Equal opportunity begins with meaningful early learning.</h2>
+        </div>
+        <p>CELCN works to widen access to quality childcare, support healthy development, and build stronger communities through inclusive early learning.</p>
+      </div>
+      <div className="workflow-panel">
+        <div>
+          <h3>What our mission looks like in practice.</h3>
+          <ul>
+            <li>Help bridge gaps in access to quality early childhood education.</li>
+            <li>Create welcoming childcare environments that families can reach and trust.</li>
+            <li>Support community growth through education, collaboration, and local leadership.</li>
+          </ul>
+          <a className="text-link" href="/about">Our story and leadership</a>
+        </div>
+        <div className="workflow-example">
+          <p className="kicker">Our Vision</p>
+          <p>We envision nurturing, secure places where children are free to explore, imagine, collaborate, and grow. Through purposeful activities and responsive care, each child is supported toward important social, emotional, cognitive, and physical milestones.</p>
+        </div>
+      </div>
     </section>
 
     <section className="programs section" id="programs">
       <p className="kicker light">Programs Offered at CELCN Chapters</p>
       <div className="program-heading">
-        <h2>Thoughtful early education for every stage of growth.</h2>
-        <p>From gentle first milestones to school readiness, our chapter programs provide safe, enriching environments designed around how children learn best.</p>
+        <h2>Purposeful care for each stage of early childhood.</h2>
+        <p>Our chapter programs combine safe care, age-responsive learning, creativity, and play to support children through their earliest developmental stages.</p>
       </div>
       <div className="program-list">
         <article>
           <span>01</span>
-          <div>
-            <h3>Infant Care Program</h3>
-            <small className="program-age">Under 18 months</small>
-          </div>
-          <p>A safe, warm, and responsive environment tailored to support your baby’s first stages of growth. Personalized care, sensory exploration, and loving attention build foundational trust and security.</p>
+          <div><h3>Infant Care Program</h3><small className="program-age">Under 18 months</small></div>
+          <p>Warm, responsive care supports a baby’s earliest growth through sensory discovery, close relationships, personalized routines, and a secure environment for first exploration.</p>
         </article>
         <article>
           <span>02</span>
-          <div>
-            <h3>Toddler Program</h3>
-            <small className="program-age">18 months – 2.5 years</small>
-          </div>
-          <p>Designed to spark curiosity and encourage budding independence. Hands-on activities, guided exploration, and joyful social interactions build confidence, coordination, and creativity.</p>
+          <div><h3>Toddler Program</h3><small className="program-age">18 months – 2.5 years</small></div>
+          <p>Hands-on discovery, social play, movement, and guided activities help toddlers develop independence, confidence, language, coordination, and curiosity.</p>
         </article>
         <article>
           <span>03</span>
-          <div>
-            <h3>Preschool Program</h3>
-            <small className="program-age">2.5 – 4 years old</small>
-          </div>
-          <p>Preparing children for a lifetime of inspired learning. A harmonious blend of structured activities and play-based inquiry fosters early literacy, critical thinking, and social-emotional skills.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <div>
-            <h3>Integrated Centre Support</h3>
-            <small className="program-age">For educators &amp; directors</small>
-          </div>
-          <p>Modern digital tools that keep daily attendance, family updates, classroom ratios, and developmental milestones effortlessly aligned—giving educators more time for meaningful care.</p>
+          <div><h3>Preschool Program</h3><small className="program-age">2.5 – 4 years old</small></div>
+          <p>Play-based learning and thoughtful structure prepare children for the next stage through early literacy, communication, problem solving, imagination, and social-emotional growth.</p>
         </article>
       </div>
-    </section>
-
-    <section className="platform section" id="platform">
-      <div className="platform-copy">
-        <p className="kicker">Innovation in Learning &amp; Management</p>
-        <h2>One calm place to run your centre.</h2>
-        <p>See what needs attention, keep families connected to their child’s day, and give educators time back—all while keeping the human connection at the heart of childcare.</p>
-        <button className="button button-teal" onClick={openDialog}>See CELCN in action</button>
-      </div>
-      <DashboardPreview />
     </section>
 
     <ClientSections onEnquire={openDialog} />
 
-    <section className="centres section" id="centres">
-      <p className="kicker light">Join Us in Shaping the Future</p>
-      <h2>Ready to build stronger beginnings together?</h2>
-      <p>Every child deserves the chance to thrive. Whether you are looking to enroll your child, partner with us, or bring CELCN into your centre, let’s build a brighter future—one child at a time.</p>
-      <button className="button button-gold" onClick={openDialog}>Get in touch</button>
+    <section className="platform section" id="platform">
+      <div className="platform-copy">
+        <p className="kicker">Supporting Better-Connected Centres</p>
+        <h2>Modern tools that protect time for care.</h2>
+        <p>CELCN’s digital platform is being built to connect enrolment, attendance, family communication, centre administration, and daily operations in one calm workspace—helping educators spend less time chasing information and more time supporting children.</p>
+        <button className="button button-teal" onClick={openDialog}>Explore the CELCN platform</button>
+      </div>
+      <DashboardPreview />
+    </section>
+
+    <section className="centres section" id="get-involved">
+      <p className="kicker light">Get Involved</p>
+      <h2>Help shape brighter futures with CELCN.</h2>
+      <p>Whether you are a parent exploring care, an educator, a community partner, or a childcare operator interested in joining the network, there is a place for you in what we are building.</p>
+      <button className="button button-gold" onClick={openDialog}>Start a conversation</button>
     </section>
 
     <SiteFooter />
