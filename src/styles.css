@@ -99,7 +99,7 @@ body:has(.shared-header) footer>.footer-top{gap:26px;flex-wrap:nowrap}body:has(.
 .footer-top{justify-content:space-between;gap:42px}
 .footer-lockup{display:flex;align-items:center;gap:26px;flex:0 1 auto}
 .footer-top>.footer-lockup>p{margin:0;padding-left:26px;border-left:1px solid #cfc8b8;font:700 18px/1.25 "Baloo 2","DM Sans",sans-serif;color:var(--teal);white-space:nowrap}
-.subscribe-form{display:block;width:min(620px,46vw);margin:0 0 0 auto}
+.subscribe-form{display:block;width:min(500px,38vw);margin:0 0 0 auto}
 .subscribe-form label{display:block;margin-bottom:8px;font:700 18px/1.2 "Baloo 2","DM Sans",sans-serif;color:var(--teal)}
 .subscribe-form>div{display:flex}
 .subscribe-form input{min-width:220px;flex:1 1 360px;height:50px;padding:0 18px;border:1px solid #b9c5bd;border-right:0;border-radius:12px 0 0 12px;background:#fff;font:500 15px "DM Sans",sans-serif;color:var(--ink);outline:none}
