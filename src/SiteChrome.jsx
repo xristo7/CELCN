@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { Baby, Buildings, ChatCircleDots, CurrencyDollar, EnvelopeSimple, Info, Path, SignIn, UserPlus } from "@phosphor-icons/react";
 
-const links = [["About us", "/about"], ["How it works", "/how-it-works"], ["Pricing", "/pricing"], ["Contact us", "/contact"]];
-const mobileLinks = [links[0], ["Programs", "/#programs"], ["Platform", "/#platform"], ["Chapters", "/#chapters"], ...links.slice(1)];
+const links = [["About us", "/about", Info], ["How it works", "/how-it-works", Path], ["Pricing", "/pricing", CurrencyDollar], ["Contact us", "/contact", ChatCircleDots]];
+const mobileLinks = [links[0], ["Programs", "/#programs", Baby], ["Platform", "/how-it-works", Path], ["Chapters", "/#chapters", Buildings], ...links.slice(1)];
 
 export function SiteHeader({ overlay = false }) {
   const [open, setOpen] = useState(false);
@@ -44,25 +45,25 @@ export function SiteHeader({ overlay = false }) {
   }, [open]);
   return <><div className="site-header-slot"><header className={`site-header shared-header${!overlay || scrolled ? " solid-header" : ""}${scrolled ? " scrolled-header" : ""}`}>
     <button ref={menuButton} className="menu-button" aria-expanded={open} aria-controls="mobile-drawer" onClick={() => setOpen(!open)}><span /><span /><span /><b>Menu</b></button>
-    <a className="brand" href="/" aria-label="CELCN home"><span className="brand-name">CELCN</span><span className="brand-long">Canadian Early Learning<br />&amp; Childcare Network</span></a>
+    <a className="brand brand-logo" href="/" aria-label="CELCN home"><img src="/assets/celcn-logo-dark.png" alt="Canada Early Learning & Care Network Inc." /></a>
     <nav id="main-nav" className="nav" aria-label="Primary navigation">
-      {links.map(([label,href]) => <a key={href} href={href} aria-current={window.location.pathname === href ? "page" : undefined} onClick={() => setOpen(false)}>{label}</a>)}
-      <a className="sign-in nav-link" href="/login">Sign in</a><a className="button button-gold nav-cta" href="/create-account">Create account</a>
+      {links.map(([label,href,Icon]) => <a key={href} href={href} aria-current={window.location.pathname === href ? "page" : undefined} onClick={() => setOpen(false)}><Icon weight="duotone" />{label}</a>)}
+      <a className="sign-in nav-link" href="/login"><SignIn weight="duotone" />Sign in</a><a className="button button-gold nav-cta" href="/create-account"><UserPlus weight="fill" />Create account</a>
     </nav>
   </header></div>{createPortal(<>
     <div className="drawer-scrim" aria-hidden="true" onClick={() => setOpen(false)} />
     <aside ref={drawer} id="mobile-drawer" className="mobile-drawer" role="dialog" aria-modal={open ? true : undefined} aria-label="Navigation menu" aria-hidden={!open} inert={!open}>
-      <div className="drawer-heading"><a className="brand-name" href="/">CELCN</a><button type="button" aria-label="Close menu" onClick={() => setOpen(false)}>×</button></div>
-      <p className="drawer-description">Canadian Early Learning<br />&amp; Childcare Network</p>
+      <div className="drawer-heading"><a className="drawer-logo" href="/" aria-label="CELCN home"><img src="/assets/celcn-logo-dark.png" alt="Canada Early Learning & Care Network Inc." /></a><button type="button" aria-label="Close menu" onClick={() => setOpen(false)}>×</button></div>
       <nav aria-label="Mobile navigation">
-        {mobileLinks.map(([label, href]) => <a key={href} href={href} aria-current={window.location.pathname === href ? "page" : undefined} onClick={() => setOpen(false)}>{label}</a>)}
-        <a href="/login" onClick={() => setOpen(false)}>Sign in</a>
-        <a className="button button-gold" href="/create-account" onClick={() => setOpen(false)}>Create account</a>
+        {mobileLinks.map(([label, href, Icon]) => <a key={`${label}-${href}`} href={href} aria-current={window.location.pathname === href ? "page" : undefined} onClick={() => setOpen(false)}><Icon weight="duotone" />{label}</a>)}
+        <a href="/login" onClick={() => setOpen(false)}><SignIn weight="duotone" />Sign in</a>
+        <a className="button button-gold" href="/create-account" onClick={() => setOpen(false)}><UserPlus weight="fill" />Create account</a>
       </nav>
     </aside>
   </>, document.body)}</>;
 }
 
 export function SiteFooter() {
-  return <footer><a className="brand footer-brand" href="/"><span className="brand-name">CELCN</span></a><p>Canadian Early Learning &amp; Childcare Network</p><div><a href="/about">About us</a><a href="/#chapters">Chapters</a><a href="/#platform">Platform</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/#faq">FAQs</a><a href="/contact">Contact us</a></div><small>© 2026 CELCN. Building stronger beginnings together.</small></footer>;
+  const [subscribed, setSubscribed] = useState(false);
+  return <footer><div className="footer-top"><div className="footer-lockup"><a className="brand footer-brand brand-logo" href="/" aria-label="CELCN home"><img src="/assets/celcn-logo.png" alt="Canada Early Learning & Care Network Inc." /></a><p>Growing bright futures<br />together</p></div>{subscribed?<p className="subscribe-success" role="status"><EnvelopeSimple weight="fill" /> You’re on the preview list.</p>:<form className="subscribe-form" onSubmit={event=>{event.preventDefault();event.currentTarget.reset();setSubscribed(true)}}><label htmlFor="footer-email">Get bright ideas in your inbox</label><div><input id="footer-email" name="email" type="email" autoComplete="email" placeholder="Email address" required/><button className="button button-teal" type="submit"><EnvelopeSimple weight="fill" /> Subscribe</button></div><small>Preview only—no address is stored yet.</small></form>}</div><div className="footer-bottom"><small>© 2026 CELCN. All rights reserved.</small><nav className="footer-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/about">About us</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/#faq">FAQs</a><a href="/contact">Contact us</a></nav></div></footer>;
 }

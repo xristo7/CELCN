@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { ClientSections } from "./ClientSections.jsx";
-import { DashboardPreview } from "./DashboardPreview.jsx";
+import { useEffect, useState } from "react";
 import { AccountPage } from "./AccountPage.jsx";
 import { HowItWorks } from "./HowItWorks.jsx";
 import { SiteHeader, SiteFooter } from "./SiteChrome.jsx";
 import { ContactPage } from "./ContactPage.jsx";
 import { PricingPage } from "./PricingPage.jsx";
 import { AboutPage } from "./AboutPage.jsx";
+import { Baby, BookOpenText, Buildings, FlowerLotus, HandHeart, Lightbulb, PuzzlePiece, ShieldCheck, Sparkle, UsersThree } from "@phosphor-icons/react";
+
 
 export function App() {
   useEffect(() => {
@@ -25,129 +25,57 @@ export function App() {
 }
 
 function LandingPage() {
+  const [program, setProgram] = useState(0);
   const openDialog = () => { window.location.assign("/contact"); };
+  const programs = [
+    { label: "Infant care", age: "Under 18 months", title: "A gentle beginning built on trust.", text: "Responsive routines, sensory discovery, and close educator relationships give babies a calm, secure place to begin exploring their world." },
+    { label: "Toddler program", age: "18 months to 2.5 years", title: "Big discoveries for growing independence.", text: "Active play, early language, and caring guidance help toddlers test new abilities while feeling safe, known, and encouraged." },
+    { label: "Preschool program", age: "2.5 to 4 years", title: "Curiosity becomes confident learning.", text: "Play-led projects, friendship skills, and creative challenges prepare children for their next step without rushing childhood." },
+  ];
+  const faqs = [
+    ["What does CELCN offer?", "CELCN brings early-learning programs, community connections, and a developing childcare management platform together in one network."],
+    ["Who can connect with CELCN?", "Families, educators, centre leaders, childcare organisations, and community partners are welcome to start a conversation with us."],
+    ["How do I enquire about a childcare place?", "Contact our team with your child’s age and preferred community. We’ll explain current chapter availability and the appropriate next step."],
+    ["Where is CELCN currently represented?", "Our chapter planning begins in Ontario, including Hamilton and Ottawa. Availability varies, so please contact us for the latest local information."],
+    ["How can my organisation become involved?", "We welcome discussions with centres and partners interested in strengthening early learning through shared knowledge, practical support, or the CELCN platform."],
+  ];
   return <main>
     <section className="hero" id="home">
-      <img className="hero-image" src="/assets/celcn-hero.png" alt="An educator and two children building with wooden blocks" />
-      <div className="hero-shade" />
+      <img className="hero-image" src="/assets/celcn-hero.png" alt="An educator and two children building with wooden blocks"/><div className="hero-shade"/>
       <SiteHeader overlay />
-      <div className="hero-content">
-        <p className="eyebrow">Explore · Discover · Learn · Thrive</p>
-        <h1><span>Stronger beginnings.</span><span>Brighter futures.</span><span>For every child.</span></h1>
-        <p className="hero-copy">CELCN brings inclusive early learning, nurturing childcare, community leadership, and thoughtful centre support together so children and families can flourish.</p>
-        <div className="actions">
-          <button className="button button-gold" onClick={openDialog}>Contact us</button>
-          <a className="button button-outline" href="#chapters">Explore chapters</a>
-        </div>
-      </div>
-      <a className="scroll-cue" href="#about">Discover CELCN <span>↓</span></a>
+      <div className="hero-content"><p className="eyebrow">Inclusive early learning, connected</p><h1><span>Care that includes.</span><span>Learning that inspires.</span><span>Beginnings that last.</span></h1><p className="hero-copy">CELCN connects children, families, educators, and communities so every child can begin with belonging and grow with confidence.</p><div className="actions"><button className="button button-gold" onClick={openDialog}><HandHeart weight="fill" /> Connect with us</button><a className="button button-outline" href="#programs"><Baby weight="fill" /> Explore programs</a></div></div>
     </section>
+    <section className="home-intro section" id="about"><p className="kicker">Nurturing tomorrow’s possibilities</p><h2>Brighter beginnings grow from care, access, and belonging.</h2><div className="home-pillars">{[
+      [ShieldCheck, "01", "A future within reach", "We believe every child deserves meaningful early-learning opportunities, whatever their family’s circumstances."],
+      [FlowerLotus, "02", "A place for every child", "Inclusive, welcoming environments help children and families feel seen, supported, and part of the community."],
+      [UsersThree, "03", "Stronger communities", "When families and educators are connected, children gain a steadier foundation for lifelong learning and well-being."],
+    ].map(([Icon,n,t,d])=><article key={t}><Icon className="section-icon" weight="duotone" /><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></section>
 
-    <section className="story section" id="about">
-      <div className="story-copy">
-        <p className="kicker">Nurturing Tomorrow's Leaders</p>
-        <h2>Creating stronger foundations for every child.</h2>
-        <p>CELCN believes every child should have access to high-quality early childhood education, regardless of background or circumstance. We create welcoming learning environments that support children, empower families, and strengthen the communities around them.</p>
-        <p>Our approach blends responsive care, collaborative play, imaginative discovery, and age-appropriate learning so children can grow socially, emotionally, physically, and cognitively with confidence.</p>
-        <a className="text-link" href="/about">Learn about CELCN</a>
-      </div>
-      <figure className="story-image">
-        <img src="/assets/celcn-story.png" alt="An educator helping a child with a classroom activity" />
-        <figcaption>Thoughtful care and meaningful learning throughout the formative years.</figcaption>
-      </figure>
-    </section>
+    <section className="mission-section section"><div className="mission-card"><div><p className="kicker">Our mission</p><h2>Close gaps. Open possibilities.</h2><ul><li>Make quality early learning easier to reach.</li><li>Support educators with practical connections and tools.</li><li>Help families feel informed, welcomed, and involved.</li></ul><button className="button button-gold" onClick={openDialog}>Start a conversation</button></div><img src="/assets/celcn-mission.png" alt="An educator and two children learning with colourful wooden shapes" /></div><div className="vision-card"><p className="kicker">Our vision</p><h2>Every child starts from a place of belonging.</h2><p>We see secure, joyful environments where collaborative play, imagination, and attentive care help children reach social, emotional, physical, and cognitive milestones in their own way.</p></div></section>
 
-    <section className="client-benefits section" aria-labelledby="foundation-title">
-      <p className="kicker">What Guides Our Work</p>
-      <h2 id="foundation-title">A clear commitment to children, families, and communities.</h2>
-      <div className="benefit-columns">
-        <article>
-          <span className="section-number">01 / Children's Futures</span>
-          <h3>Opportunity from the very beginning.</h3>
-          <p>We work toward a future where every child can benefit from quality early learning and the secure foundation it creates for later life.</p>
-        </article>
-        <article>
-          <span className="section-number">02 / Inclusive Access</span>
-          <h3>Early learning that welcomes every family.</h3>
-          <p>Our network is shaped around accessible, inclusive care that respects the needs, circumstances, and diversity of the families we serve.</p>
-        </article>
-        <article>
-          <span className="section-number">03 / Community Growth</span>
-          <h3>Childcare that strengthens more than one child.</h3>
-          <p>By supporting families, educators, and local partners together, quality early education becomes a stronger foundation for the wider community.</p>
-        </article>
-      </div>
-    </section>
+    <section className="home-programs section" id="programs"><div className="program-photo"><img src="/assets/celcn-programs.png" alt="A parent and child receiving a warm welcome at a childcare centre" /></div><div className="program-content"><p className="kicker">Programs shaped around childhood</p><h2>Care that grows with every new stage.</h2><p>Explore age-responsive experiences designed to protect wonder, build confidence, and support the whole child.</p><div className="program-accordion">{programs.map((item,index)=><article className={program===index?"active":""} key={item.label}><button type="button" aria-expanded={program===index} onClick={()=>setProgram(index)}><span>{item.label}</span><small>{item.age}</small></button>{program===index&&<div><h3>{item.title}</h3><p>{item.text}</p><a href="/contact">Ask about this program</a></div>}</article>)}</div></div></section>
 
-    <section className="workflow-section section" aria-labelledby="mission-title">
-      <div className="section-intro">
-        <div>
-          <p className="kicker">Our Mission</p>
-          <h2 id="mission-title">Equal opportunity begins with meaningful early learning.</h2>
-        </div>
-        <p>CELCN works to widen access to quality childcare, support healthy development, and build stronger communities through inclusive early learning.</p>
-      </div>
-      <div className="workflow-panel">
-        <div>
-          <h3>What our mission looks like in practice.</h3>
-          <ul>
-            <li>Help bridge gaps in access to quality early childhood education.</li>
-            <li>Create welcoming childcare environments that families can reach and trust.</li>
-            <li>Support community growth through education, collaboration, and local leadership.</li>
-          </ul>
-          <a className="text-link" href="/about">Our story and leadership</a>
-        </div>
-        <div className="workflow-example">
-          <p className="kicker">Our Vision</p>
-          <p>We envision nurturing, secure places where children are free to explore, imagine, collaborate, and grow. Through purposeful activities and responsive care, each child is supported toward important social, emotional, cognitive, and physical milestones.</p>
-        </div>
-      </div>
-    </section>
+    <section className="approach-section section"><p className="kicker">Our approach to confident growth</p><h2>Enriching days begin with the right conditions.</h2><div className="approach-grid">{[
+      [ShieldCheck, "Safety first", "Calm, attentive environments give children the confidence to explore."],
+      [PuzzlePiece, "Individual pathways", "Activities respond to each child’s interests, pace, strengths, and needs."],
+      [UsersThree, "Learning together", "Shared play helps children practise communication, empathy, and cooperation."],
+      [Sparkle, "Room to imagine", "Open-ended creative experiences turn curiosity into meaningful discovery."],
+    ].map(([Icon,t,d],i)=><article key={t}><Icon className="section-icon" weight="duotone" /><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></article>)}</div><a className="button button-teal" href="/about"><BookOpenText weight="fill" /> Discover our story</a></section>
 
-    <section className="programs section" id="programs">
-      <p className="kicker light">Programs Offered at CELCN Chapters</p>
-      <div className="program-heading">
-        <h2>Purposeful care for each stage of early childhood.</h2>
-        <p>Our chapter programs combine safe care, age-responsive learning, creativity, and play to support children through their earliest developmental stages.</p>
-      </div>
-      <div className="program-list">
-        <article>
-          <span>01</span>
-          <div><h3>Infant Care Program</h3><small className="program-age">Under 18 months</small></div>
-          <p>Warm, responsive care supports a baby’s earliest growth through sensory discovery, close relationships, personalized routines, and a secure environment for first exploration.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <div><h3>Toddler Program</h3><small className="program-age">18 months – 2.5 years</small></div>
-          <p>Hands-on discovery, social play, movement, and guided activities help toddlers develop independence, confidence, language, coordination, and curiosity.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <div><h3>Preschool Program</h3><small className="program-age">2.5 – 4 years old</small></div>
-          <p>Play-based learning and thoughtful structure prepare children for the next stage through early literacy, communication, problem solving, imagination, and social-emotional growth.</p>
-        </article>
-      </div>
-    </section>
+    <section className="education-section section"><div><p className="kicker light">Why early learning matters</p><h2>Today’s experiences shape tomorrow’s possibilities.</h2><p>Strong early-learning relationships help children build the skills and self-belief they carry into school, friendships, and life.</p></div><div className="education-points">{[[Lightbulb,"Thinking and communication"],[FlowerLotus,"Emotional well-being"],[UsersThree,"Confidence with others"],[BookOpenText,"A foundation for future learning"]].map(([Icon,t])=><article key={t}><Icon weight="duotone" /><strong>{t}</strong></article>)}</div><p className="education-note">Investing in childhood strengthens not only individual children, but the families and communities growing alongside them.</p></section>
 
-    <ClientSections onEnquire={openDialog} />
+    <section className="commitment-section section"><p className="kicker">Our commitment in action</p><h2>How CELCN helps make a difference.</h2><div className="commitment-grid">{[
+      ["Inclusive opportunities", "We work toward early-learning experiences that welcome different needs without lowering expectations for quality."],
+      ["Community partnerships", "Local relationships bring more knowledge, support, and opportunity around children and families."],
+      ["Thoughtful innovation", "Modern tools can simplify administration and make more room for the human work of care."],
+    ].map(([t,d],i)=><article key={t}><img src={["/assets/celcn-inclusion.png","/assets/celcn-partnerships.png","/assets/celcn-innovation.png"][i]} alt=""/><div><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></div></article>)}</div></section>
 
-    <section className="platform section" id="platform">
-      <div className="platform-copy">
-        <p className="kicker">Supporting Better-Connected Centres</p>
-        <h2>Modern tools that protect time for care.</h2>
-        <p>CELCN’s digital platform is being built to connect enrolment, attendance, family communication, centre administration, and daily operations in one calm workspace—helping educators spend less time chasing information and more time supporting children.</p>
-        <button className="button button-teal" onClick={openDialog}>Explore the CELCN platform</button>
-      </div>
-      <DashboardPreview />
-    </section>
+    <section className="home-chapters section" id="chapters"><div><p className="kicker">Local connections, shared purpose</p><h2>A network rooted in community.</h2><p>CELCN’s chapter planning begins in Ontario, bringing local relationships into a wider early-learning network.</p></div><div className="home-chapter-list"><article><Buildings className="section-icon" weight="duotone" /><span>Ontario</span><h3>Ottawa</h3><p>Roydon Avenue</p><small>Service availability to be confirmed.</small></article><article><Buildings className="section-icon" weight="duotone" /><span>Ontario</span><h3>Hamilton</h3><p>191 King Williams Street<br />Hamilton, ON L8R 1A7</p><a className="text-link" href="/about#hamilton-chapter">Meet the chapter directors</a></article></div></section>
 
-    <section className="centres section" id="get-involved">
-      <p className="kicker light">Get Involved</p>
-      <h2>Help shape brighter futures with CELCN.</h2>
-      <p>Whether you are a parent exploring care, an educator, a community partner, or a childcare operator interested in joining the network, there is a place for you in what we are building.</p>
-      <button className="button button-gold" onClick={openDialog}>Start a conversation</button>
-    </section>
+    <section className="home-faq section" id="faq"><div className="faq-photo"><img src="/assets/celcn-faq.png" alt="An educator listening as a child shares a handmade butterfly" /></div><div><p className="kicker">CELCN questions, clearly answered</p><h2>Wondering where to begin?</h2><div className="faq-list">{faqs.map(([q,a])=><details key={q} name="celcn-accordion"><summary>{q}</summary><p>{a}</p></details>)}</div><button className="button button-teal" onClick={openDialog}>Ask us something</button></div></section>
 
+    <section className="support-strip section"><p>Together, we can widen access to nurturing early learning and build stronger beginnings for children and communities.</p></section>
+    <section className="home-cta section"><div><p className="kicker light">Become part of the network</p><h2>Help brighter beginnings take root.</h2><p>Whether you represent a family, centre, community organisation, or potential partner, your next conversation can help shape what CELCN becomes.</p><button className="button button-gold" onClick={openDialog}>Get involved</button></div></section>
     <SiteFooter />
   </main>;
 }

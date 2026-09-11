@@ -7,9 +7,9 @@ export function AccountPage({ create = false }) {
   useEffect(() => { document.title = `${create ? "Create account" : "Sign in"} — CELCN`; }, [create]);
   return <main className="account-page">
     <aside className="account-story">
-      <img src="/assets/celcn-story.png" alt="An educator supporting a child’s learning" />
-      <a className="brand" href="/" aria-label="CELCN home"><span className="brand-name">CELCN</span></a>
-      <div><p className="kicker light">Stronger beginnings, together</p><h2>More connected care starts here.</h2><p>One community. Practical tools. More time for the moments that matter.</p></div>
+      <img src="/assets/celcn-account-welcome.png" alt="A family receiving a warm welcome at a childcare centre" />
+      <a className="brand brand-logo account-logo" href="/" aria-label="CELCN home"><img src="/assets/celcn-logo-dark.png" alt="Canada Early Learning & Care Network Inc." /></a>
+      <div><p className="kicker light">Growing bright futures together</p><h2>More connected care starts here.</h2><p>One community. Practical tools. More time for the moments that matter.</p></div>
     </aside>
     <section className="account-main">
       <a className="account-back" href="/">Back to CELCN</a>
@@ -29,7 +29,7 @@ export function AccountPage({ create = false }) {
           </form>}
         <p className="account-switch">{create ? "Already have an account?" : "New to CELCN?"} <a href={create ? "/login" : "/create-account"}>{create ? "Sign in" : "Create an account"}</a></p>
       </div>
-      <small className="account-footer">CELCN · Building stronger beginnings together.</small>
+      <small className="account-footer">CELCN · Growing bright futures together.</small>
     </section>
   </main>;
 }
