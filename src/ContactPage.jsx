@@ -10,10 +10,10 @@ export function ContactPage() {
     <div className="contact-intro">
       <p className="kicker">Get in Touch</p>
       <h1>Let’s talk about<br />brighter beginnings.</h1>
-      <p>Have questions about child enrolment in our chapter programs, bringing CELCN into your centre, or joining our community network? Tell us what you have in mind.</p>
+      <p>Have questions about enrolment, program availability, or visiting our Hamilton daycare centre? Tell us what you have in mind.</p>
       <div className="contact-guidance">
         <h2>A welcoming place to start</h2>
-        <p>Whether you’re a parent exploring care, an educator, or a childcare leader, share where you’re based and what you’d like to discuss. There’s no need to include sensitive records.</p>
+        <p>Share your child’s age, preferred start date, and the kind of care you’re looking for. There’s no need to include sensitive records in this form.</p>
         <a className="text-link" href="/how-it-works">See how getting started works</a>
       </div>
     </div>
@@ -22,8 +22,8 @@ export function ContactPage() {
         <h2 id="contact-form-title">What can we help with?</h2><p className="contact-preview">Preview form — please use sample details. Nothing is sent or stored.</p>
         <form onSubmit={event => { event.preventDefault(); event.currentTarget.reset(); setComplete(true); }}>
           <div className="contact-field-row"><label>Full name<input name="name" autoComplete="name" required maxLength={120} /></label><label>Email address<input name="email" type="email" autoComplete="email" required maxLength={254} /></label></div>
-          <label>Organisation or community <span className="field-optional">(optional)</span><input name="organisation" autoComplete="organization" maxLength={180} /></label>
-          <label>I’d like to discuss<select name="topic" required defaultValue={new URLSearchParams(window.location.search).get("topic") === "pricing" ? "pricing" : ""}><option value="" disabled>Select a topic</option><option value="enrolment">Child enrolment &amp; program availability</option><option value="chapters">Opening or affiliating a CELCN Chapter</option><option value="pricing">Pricing and subscriptions</option><option value="operations">Centre management platform &amp; operations</option><option value="partnerships">Community partnerships &amp; initiatives</option><option value="general">General question</option></select></label>
+          <label>Child age or expected start date <span className="field-optional">(optional)</span><input name="child-details" maxLength={180} /></label>
+          <label>I’d like to discuss<select name="topic" required defaultValue=""><option value="" disabled>Select a topic</option><option value="enrolment">Child enrolment &amp; availability</option><option value="tour">Booking a centre visit</option><option value="programs">Infant, toddler, or preschool programs</option><option value="staff">Educator or employment enquiry</option><option value="general">General question</option></select></label>
           <label>Your message<textarea name="message" rows={5} required maxLength={3000} aria-describedby="message-help" /></label><small id="message-help">Please don’t include child records, passwords, or other sensitive information.</small>
           <button className="button button-gold" type="submit">Preview enquiry</button>
         </form>

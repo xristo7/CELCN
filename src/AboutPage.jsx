@@ -6,10 +6,10 @@ export function AboutPage() {
   return <><SiteHeader /><main className="about-page">
     <section className="about-intro section">
       <div>
-        <p className="kicker">About CELCN</p>
-        <h1>Nurturing tomorrow’s leaders<br />through community and care.</h1>
-        <p>CELCN—the Canadian Early Learning &amp; Childcare Network—is dedicated to building a future where every child, regardless of socio-economic background, has access to quality early childhood education.</p>
-        <p>As a community-first organization, we are committed to providing inclusive, accessible, and innovative childcare solutions that empower families, nurture children, and strengthen local communities across Canada.</p>
+        <p className="kicker">About our daycare</p>
+        <h1>Nurturing children through warmth, structure, and play.</h1>
+        <p>Canada Early Learning &amp; Care Network - Hamilton - King Williams St Inc. is an owned childcare centre serving families from 191 King William Street in Hamilton.</p>
+        <p>Our work is simple and important: create a safe, inclusive place where children are cared for deeply, encouraged daily, and supported as they grow through each early-learning stage.</p>
       </div>
       <figure>
         <img src="/assets/celcn-story.png" alt="An educator and a young child exploring a puzzle together in a daycare classroom" />
@@ -19,9 +19,9 @@ export function AboutPage() {
     <section className="about-purpose section">
       <p className="kicker">Our Mission &amp; Vision</p>
       <div>
-        <h2>Securing children’s futures through equal opportunity.</h2>
-        <p>Early childhood education is the cornerstone of lifelong success. Our mission bridges the gap in early learning by creating nurturing, secure spaces where infants, toddlers, and preschoolers can explore, discover, and achieve developmental milestones with confidence.</p>
-        <p>Aligned with the Canada Growth Plan and national early learning frameworks, our work supports parents, equips dedicated educators, and builds a sustainable foundation for the next generation.</p>
+        <h2>Helping children feel safe enough to explore and confident enough to grow.</h2>
+        <p>Early childhood education is the cornerstone of lifelong success. Our mission is to provide nurturing, secure spaces where infants, toddlers, and preschoolers can explore, discover, and achieve developmental milestones with confidence.</p>
+        <p>We support parents with clear communication, thoughtful routines, and a team that treats care as both a responsibility and a relationship.</p>
       </div>
     </section>
 
@@ -37,24 +37,24 @@ export function AboutPage() {
         <article>
           <span>02</span>
           <h3>Inclusive Accessibility</h3>
-          <p>We work to ensure high-quality early care is within reach for all families, removing barriers to equitable early childhood education.</p>
+          <p>We work to make children and families feel welcome, respected, and supported from the first conversation.</p>
         </article>
         <article>
           <span>03</span>
-          <h3>Community Partnerships</h3>
-          <p>Collaboration with local educators, community organizations, and families ensures deep, lasting support across every chapter.</p>
+          <h3>Family Partnership</h3>
+          <p>Collaboration with parents and caregivers helps each child’s routines, strengths, and needs stay visible.</p>
         </article>
       </div>
     </section>
 
     <section className="about-future section">
       <div>
-        <p className="kicker light">Join Us in Shaping the Future</p>
-        <h2>Every child deserves a chance to thrive.</h2>
+        <p className="kicker light">Visit CELCN</p>
+        <h2>Every child deserves a place to feel they belong.</h2>
       </div>
       <div>
-        <p>Together, we can break barriers and ensure that quality early childhood education is within reach for all. Whether you are looking to enroll your child, become a partner, or launch a chapter, let’s build brighter futures, one child at a time.</p>
-        <a className="button button-gold" href="/contact">Connect with our team <span aria-hidden="true">↗</span></a>
+        <p>If you are looking for care, tell us your child’s age, schedule needs, and questions. We’ll help you understand current availability and whether our Hamilton centre is the right fit.</p>
+        <a className="button button-gold" href="/contact">Ask about enrolment <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main><SiteFooter /></>;
