@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Baby, ChatCircleDots, EnvelopeSimple, Info, Path } from "@phosphor-icons/react";
+import { Baby, Buildings, ChatCircleDots, ClipboardText, EnvelopeSimple, Info, Path } from "@phosphor-icons/react";
 
-const links = [["About us", "/about", Info], ["Programs", "/#programs", Baby], ["How it works", "/how-it-works", Path], ["Contact us", "/contact", ChatCircleDots]];
-const mobileLinks = links;
+const links = [["About us", "/about", Info], ["Programs", "/programs", Baby], ["Chapters", "/chapters", Buildings], ["Admissions", "/admissions", ClipboardText], ["How it works", "/how-it-works", Path], ["Contact us", "/contact", ChatCircleDots]];
+const mobileLinks = [...links.slice(0, 4), ["Parent handbook", "/parent-handbook", ClipboardText], ...links.slice(4)];
 
 export function SiteHeader({ overlay = false }) {
   const [open, setOpen] = useState(false);
@@ -62,5 +62,5 @@ export function SiteHeader({ overlay = false }) {
 
 export function SiteFooter() {
   const [subscribed, setSubscribed] = useState(false);
-  return <footer><div className="footer-top"><div className="footer-lockup"><a className="brand footer-brand brand-logo" href="/" aria-label="CELCN home"><img src="/assets/celcn-logo.png" alt="Canada Early Learning & Care Network Inc." /></a><p>Growing bright futures<br />together</p></div>{subscribed?<p className="subscribe-success" role="status"><EnvelopeSimple weight="fill" /> You’re on the centre updates list.</p>:<form className="subscribe-form" onSubmit={event=>{event.preventDefault();event.currentTarget.reset();setSubscribed(true)}}><label htmlFor="footer-email">Get centre updates in your inbox</label><div><input id="footer-email" name="email" type="email" autoComplete="email" placeholder="Email address" required/><button className="button button-teal" type="submit"><EnvelopeSimple weight="fill" /> Subscribe</button></div></form>}</div><div className="footer-bottom"><small>© 2026 CELCN. All rights reserved.</small><nav className="footer-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/about">About us</a><a href="/#programs">Programs</a><a href="/how-it-works">How it works</a><a href="/#faq">FAQs</a><a href="/contact">Contact us</a></nav></div></footer>;
+  return <footer><div className="footer-top"><div className="footer-lockup"><a className="brand footer-brand brand-logo" href="/" aria-label="CELCN home"><img src="/assets/celcn-logo.png" alt="Canada Early Learning & Care Network Inc." /></a><p>Growing bright futures<br />together</p></div>{subscribed?<p className="subscribe-success" role="status"><EnvelopeSimple weight="fill" /> You’re on the centre updates list.</p>:<form className="subscribe-form" onSubmit={event=>{event.preventDefault();event.currentTarget.reset();setSubscribed(true)}}><label htmlFor="footer-email">Get centre updates in your inbox</label><div><input id="footer-email" name="email" type="email" autoComplete="email" placeholder="Email address" required/><button className="button button-teal" type="submit"><EnvelopeSimple weight="fill" /> Subscribe</button></div></form>}</div><div className="footer-bottom"><small>© 2026 CELCN. All rights reserved.</small><nav className="footer-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/about">About us</a><a href="/programs">Programs</a><a href="/chapters">Chapters</a><a href="/admissions">Admissions</a><a href="/parent-handbook">Parent handbook</a><a href="/how-it-works">How it works</a><a href="/#faq">FAQs</a><a href="/contact">Contact us</a></nav></div></footer>;
 }

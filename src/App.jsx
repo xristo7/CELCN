@@ -3,6 +3,10 @@ import { HowItWorks } from "./HowItWorks.jsx";
 import { SiteHeader, SiteFooter } from "./SiteChrome.jsx";
 import { ContactPage } from "./ContactPage.jsx";
 import { AboutPage } from "./AboutPage.jsx";
+import { AdmissionsPage } from "./AdmissionsPage.jsx";
+import { ChaptersPage } from "./ChaptersPage.jsx";
+import { ParentHandbookPage } from "./ParentHandbookPage.jsx";
+import { ProgramsPage } from "./ProgramsPage.jsx";
 import { Baby, BookOpenText, FlowerLotus, HandHeart, Lightbulb, MapPin, PuzzlePiece, ShieldCheck, Sparkle, UsersThree } from "@phosphor-icons/react";
 
 
@@ -15,6 +19,13 @@ export function App() {
   const path = window.location.pathname.replace(/\/$/, "");
   if (path === "/how-it-works") return <HowItWorks />;
   if (path === "/about" || path === "/about-us") return <AboutPage />;
+  if (path === "/programs") return <ProgramsPage />;
+  if (path === "/programs/infant" || path === "/infant-care-program") return <ProgramsPage selected="infant" />;
+  if (path === "/programs/toddler" || path === "/toddler-program") return <ProgramsPage selected="toddler" />;
+  if (path === "/programs/preschool" || path === "/preschool-program") return <ProgramsPage selected="preschool" />;
+  if (path === "/parent-handbook") return <ParentHandbookPage />;
+  if (path === "/admissions" || path === "/admission-form") return <AdmissionsPage />;
+  if (path === "/chapters") return <ChaptersPage />;
   if (path === "/contact" || path === "/contact-us") return <ContactPage />;
   return <LandingPage />;
 }
@@ -48,7 +59,7 @@ function LandingPage() {
 
     <section className="mission-section section"><div className="mission-card"><div><p className="kicker">Our mission</p><h2>A nurturing place for every child to thrive.</h2><ul><li>Offer safe, dependable care for Hamilton families.</li><li>Support infants, toddlers, and preschoolers through play-based learning.</li><li>Build strong relationships between children, educators, and parents.</li></ul><button className="button button-gold" onClick={openDialog}>Start an enrolment enquiry</button></div><img src="/assets/celcn-mission.png" alt="An educator and two children learning with colourful wooden shapes" /></div><div className="vision-card"><p className="kicker">Our centre</p><h2>191 King William Street, Hamilton.</h2><p>Our daycare is designed as a calm, joyful everyday environment where children can practise independence, friendship, language, movement, and imagination with caring adults nearby.</p><a className="text-link" href="/contact">Plan a visit</a></div></section>
 
-    <section className="home-programs section" id="programs"><div className="program-photo"><img src="/assets/celcn-programs.png" alt="A parent and child receiving a warm welcome at a childcare centre" /></div><div className="program-content"><p className="kicker">Programs shaped around childhood</p><h2>Care that grows with every new stage.</h2><p>Explore age-responsive experiences designed to protect wonder, build confidence, and support the whole child.</p><div className="program-accordion">{programs.map((item,index)=><article className={program===index?"active":""} key={item.label}><button type="button" aria-expanded={program===index} onClick={()=>setProgram(index)}><span>{item.label}</span><small>{item.age}</small></button>{program===index&&<div><h3>{item.title}</h3><p>{item.text}</p><a href="/contact">Ask about this program</a></div>}</article>)}</div></div></section>
+    <section className="home-programs section" id="programs"><div className="program-photo"><img src="/assets/celcn-programs.png" alt="A parent and child receiving a warm welcome at a childcare centre" /></div><div className="program-content"><p className="kicker">Programs shaped around childhood</p><h2>Care that grows with every new stage.</h2><p>Explore age-responsive experiences designed to protect wonder, build confidence, and support the whole child.</p><div className="program-accordion">{programs.map((item,index)=><article className={program===index?"active":""} key={item.label}><button type="button" aria-expanded={program===index} onClick={()=>setProgram(index)}><span>{item.label}</span><small>{item.age}</small></button>{program===index&&<div><h3>{item.title}</h3><p>{item.text}</p><a href={["/programs/infant","/programs/toddler","/programs/preschool"][index]}>Learn more</a></div>}</article>)}</div><a className="button button-teal" href="/programs">View all programs</a></div></section>
 
     <section className="approach-section section"><p className="kicker">Our approach to confident growth</p><h2>Enriching days begin with the right conditions.</h2><div className="approach-grid">{[
       [ShieldCheck, "Safety first", "Calm, attentive environments give children the confidence to explore."],
@@ -65,7 +76,7 @@ function LandingPage() {
       ["Joyful discovery", "Creative play, stories, music, movement, and hands-on activities make learning feel alive."],
     ].map(([t,d],i)=><article key={t}><img src={["/assets/celcn-inclusion.png","/assets/celcn-partnerships.png","/assets/celcn-innovation.png"][i]} alt=""/><div><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></div></article>)}</div></section>
 
-    <section className="home-chapters section" id="location"><div><p className="kicker">Visit our centre</p><h2>Rooted in downtown Hamilton.</h2><p>Families can find CELCN at 191 King William Street, Hamilton, Ontario L8R 1A7. Ask us about room availability, age groups, and the best next step for your child.</p><a className="button button-teal" href="/contact"><MapPin weight="fill" /> Contact the centre</a></div><div className="home-chapter-list"><article><MapPin className="section-icon" weight="duotone" /><span>Address</span><h3>Hamilton</h3><p>191 King William Street<br />Hamilton, ON L8R 1A7</p><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=191%20King%20William%20Street%20Hamilton%20ON%20L8R%201A7" target="_blank" rel="noreferrer">Open in Google Maps</a></article><article><HandHeart className="section-icon" weight="duotone" /><span>Families</span><h3>Enrolment</h3><p>Tell us your child’s age, care needs, and preferred start date so we can guide you clearly.</p><a className="text-link" href="/contact">Start an enquiry</a></article></div></section>
+    <section className="home-chapters section" id="location"><div><p className="kicker">Visit our centre</p><h2>Rooted in downtown Hamilton.</h2><p>Families can find CELCN at 191 King William Street, Hamilton, Ontario L8R 1A7. Ask us about room availability, age groups, and the best next step for your child.</p><a className="button button-teal" href="/chapters"><MapPin weight="fill" /> View chapters</a></div><div className="home-chapter-list"><article><MapPin className="section-icon" weight="duotone" /><span>Address</span><h3>Hamilton</h3><p>191 King William Street<br />Hamilton, ON L8R 1A7</p><a className="text-link" href="/chapters#hamilton-chapter">Meet the Hamilton chapter</a></article><article><HandHeart className="section-icon" weight="duotone" /><span>Families</span><h3>Enrolment</h3><p>Tell us your child’s age, care needs, and preferred start date so we can guide you clearly.</p><a className="text-link" href="/admissions">Start an enquiry</a></article></div></section>
 
     <section className="home-faq section" id="faq"><div className="faq-photo"><img src="/assets/celcn-faq.png" alt="An educator listening as a child shares a handmade butterfly" /></div><div><p className="kicker">CELCN questions, clearly answered</p><h2>Wondering where to begin?</h2><div className="faq-list">{faqs.map(([q,a])=><details key={q} name="celcn-accordion"><summary>{q}</summary><p>{a}</p></details>)}</div><button className="button button-teal" onClick={openDialog}>Ask us something</button></div></section>
 
