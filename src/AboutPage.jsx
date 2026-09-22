@@ -47,69 +47,6 @@ export function AboutPage() {
       </div>
     </section>
 
-    <section className="about-chapter section" id="hamilton-chapter">
-      <div>
-        <p className="kicker">Our Hamilton chapter</p>
-        <h2>Local care.<br />A shared commitment.</h2>
-        <p className="chapter-legal-name">CANADA EARLY LEARNING &amp; CARE NETWORK-Hamilton- KING WILLIAMS ST INC</p>
-      </div>
-      <address>
-        <p>191 King Williams Street<br />Hamilton, ON L8R 1A7</p>
-        <a href="mailto:canadaearlylearning.kingwilliams@mail.com">canadaearlylearning.kingwilliams@mail.com</a>
-        <a href="tel:+14377273420">437 727 3420</a>
-      </address>
-    </section>
-
-    <section className="about-people section" aria-labelledby="people-title">
-      <p className="kicker">Hamilton chapter directors</p>
-      <h2 id="people-title">The people behind our chapter.</h2>
-      <div className="about-portraits">{[
-        ["Jennifer Pere Ajuwa", "/assets/celcn-portrait-1.png", ["BSc Political Science", "Diploma in PSW", "Diploma in Community Social Worker", "Diploma in ECA"]],
-        ["Yvonne Otiteh", "/assets/celcn-portrait-2.png", ["BSc Engineering", "Certificate in Project Management", "Diploma in Community Social Worker"]],
-        ["Isoken Sikpojie", "/assets/celcn-portrait-3.png", ["Computer Science", "Mental Health", "Coaching Program"]],
-      ].map(([name, image, qualifications]) => <figure key={name}><img src={image} alt={name} loading="lazy" /><figcaption><p className="kicker">Chapter director</p><h3>{name}</h3><ul>{qualifications.map(qualification => <li key={qualification}>{qualification}</li>)}</ul></figcaption></figure>)}</div>
-    </section>
-
-    <section className="about-chapter section" id="ottawa-chapter">
-      <div>
-        <p className="kicker">Our Ottawa chapter</p>
-        <h2>Local care.<br />A shared commitment.</h2>
-        <p className="chapter-legal-name">CANADA EARLY LEARNING &amp; CARE NETWORK – Ottawa - ROYDON AVENUE INC.</p>
-      </div>
-      <address>
-        <p>1 Roydon Place Unit 101 &amp; 102<br />Ottawa, ON</p>
-        <a href="mailto:CeclnRoydon@gmail.com">CeclnRoydon@gmail.com</a>
-        <a href="tel:+16477396214">647 739 6214</a>
-      </address>
-    </section>
-
-    <section className="about-people section" aria-labelledby="ottawa-people-title">
-      <p className="kicker">Ottawa chapter directors</p>
-      <h2 id="ottawa-people-title">The leadership behind our chapter.</h2>
-      <div className="about-portraits about-portraits-2">{[
-        ["Udeme Udoh", "", ["MEng Engineering", "Pastor & Community Leader", "Co-Founder Mumsfirst"]],
-        ["Adekunle Oduyiga", "", ["Post Graduate Diploma in Business Administration", "Higher National Diploma in Physics Electronics", "Diploma in Cyber Security"]],
-      ].map(([name, image, qualifications]) => (
-        <figure key={name}>
-          {image ? (
-            <img src={image} alt={name} loading="lazy" />
-          ) : (
-            <div className="about-portrait-placeholder" aria-label={name}>
-              <div className="about-portrait-avatar">{name.split(" ").map(n => n[0]).join("")}</div>
-              <span className="placeholder-label">Director portrait</span>
-            </div>
-          )}
-          <figcaption>
-            <p className="kicker">Chapter director</p>
-            <h3>{name}</h3>
-            <ul>
-              {qualifications.map(qualification => <li key={qualification}>{qualification}</li>)}
-            </ul>
-          </figcaption>
-        </figure>
-      ))}</div>
-    </section>
-
     <section className="about-future section">
       <div>
         <p className="kicker light">Join Us in Shaping the Future</p>

@@ -44,3 +44,47 @@ No actionable P0, P1, or P2 visual or interaction issues remain.
 - P3: Additional CELCN-owned photography could reduce intentional image reuse if more approved assets become available.
 
 final result: passed
+
+---
+
+# Chapters Page Redesign QA — 2026-09-13
+
+## Evidence
+
+- Source visual truth: `C:\Users\Administrator\Documents\CELCN\chapters.png` and `https://www.ceychildcare.com/locations/`
+- Implementation: `http://127.0.0.1:5174/chapters`
+- Implementation screenshot evidence: browser-rendered inline captures from the local Chapters page; the browser did not expose a local screenshot path.
+- Source image: 2830 × 16384 pixels, displayed at normalized scale in the task.
+- Implementation viewports: 1424 × 809 desktop and 530 × 770 mobile at 1× browser density.
+- State: page loaded, maps rendered, mobile menu closed, chapter cards at rest.
+
+## Full-view comparison
+
+The implementation follows the reference’s defining structure: a dark photographic title banner, followed by large chapter rows where a Google map and a compact information card alternate sides. CELCN’s established teal, cream, gold, rounded display type, header, footer, and people photography remain intact.
+
+## Focused comparison
+
+- The Hamilton row places the large map left and details right, matching the first reference location.
+- The Ottawa row reverses the composition, matching the alternating reference rhythm.
+- Cards retain the reference’s compact metadata hierarchy, thin gold divider, location/contact icons, and prominent action button.
+- On mobile, each map and details card stack without horizontal overflow; contact details wrap safely.
+
+## Required fidelity surfaces
+
+- Fonts and typography: CELCN’s Baloo 2 display type and DM Sans body type are retained while matching the reference’s large chapter-title and compact metadata hierarchy.
+- Spacing and layout rhythm: wide map/card bands, alternating tracks, generous white space, and compact details panels match the source pattern.
+- Colors and visual tokens: the structure follows the reference while intentionally retaining CELCN teal, cream, gold, and white.
+- Image quality and assets: existing high-resolution CELCN photography is used in the banner; real Google map embeds are used for both chapter locations; supplied director portraits remain unchanged.
+- Copy and content: Hamilton and Ottawa legal names, addresses, emails, phone numbers, director names, and qualifications are preserved.
+
+## Findings and comparison history
+
+1. Initial P2: the Chapters page used separate introductory, address, and map sections, which did not reflect the reference’s paired location rows. Fixed by combining each location into a single map-and-details band.
+2. Initial P2: both chapters followed the same left-to-right structure. Fixed by reversing the Ottawa row on desktop.
+3. Post-fix evidence: desktop captures show Hamilton map-left/card-right and Ottawa card-left/map-right; mobile captures show a clean single-column stack. Both map embeds rendered and the browser console reported no warnings or errors.
+
+## Follow-up polish
+
+- P3: Replace the two Ottawa initial-based portrait treatments when approved director photos become available.
+
+final result: passed

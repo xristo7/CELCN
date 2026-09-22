@@ -17,7 +17,7 @@ export function HowItWorks() {
       <p>Explore our collaborative four-step journey: discover your community’s needs, structure your learning spaces, equip your educators, and connect families to everyday moments.</p>
       <div className="actions">
         <a className="button button-gold" href="#getting-started">Explore the journey</a>
-        <a className="button button-outline" href="/create-account">Create an account</a>
+        <a className="button button-outline" href="/chapters">View our chapters</a>
       </div>
       <p className="how-disclaimer">Platform preview · features and onboarding services are being developed in phases.</p>
     </section>

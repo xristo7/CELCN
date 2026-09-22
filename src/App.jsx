@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { AccountPage } from "./AccountPage.jsx";
 import { HowItWorks } from "./HowItWorks.jsx";
 import { SiteHeader, SiteFooter } from "./SiteChrome.jsx";
 import { ContactPage } from "./ContactPage.jsx";
 import { PricingPage } from "./PricingPage.jsx";
 import { AboutPage } from "./AboutPage.jsx";
+import { ChaptersPage } from "./ChaptersPage.jsx";
 import { Baby, BookOpenText, Buildings, FlowerLotus, HandHeart, Lightbulb, PuzzlePiece, ShieldCheck, Sparkle, UsersThree } from "@phosphor-icons/react";
 
 
@@ -15,11 +15,10 @@ export function App() {
     return () => cancelAnimationFrame(frame);
   }, []);
   const path = window.location.pathname.replace(/\/$/, "");
-  if (path === "/login") return <AccountPage />;
-  if (path === "/create-account") return <AccountPage create />;
   if (path === "/how-it-works") return <HowItWorks />;
   if (path === "/pricing") return <PricingPage />;
   if (path === "/about" || path === "/about-us") return <AboutPage />;
+  if (path === "/chapters") return <ChaptersPage />;
   if (path === "/contact" || path === "/contact-us") return <ContactPage />;
   return <LandingPage />;
 }
@@ -70,7 +69,7 @@ function LandingPage() {
       ["Thoughtful innovation", "Modern tools can simplify administration and make more room for the human work of care."],
     ].map(([t,d],i)=><article key={t}><img src={["/assets/celcn-inclusion.png","/assets/celcn-partnerships.png","/assets/celcn-innovation.png"][i]} alt=""/><div><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></div></article>)}</div></section>
 
-    <section className="home-chapters section" id="chapters"><div><p className="kicker">Local connections, shared purpose</p><h2>A network rooted in community.</h2><p>CELCN’s chapter planning begins in Ontario, bringing local relationships into a wider early-learning network.</p></div><div className="home-chapter-list"><article><Buildings className="section-icon" weight="duotone" /><span>Ontario</span><h3>Ottawa</h3><p>Roydon Avenue</p><small>Service availability to be confirmed.</small></article><article><Buildings className="section-icon" weight="duotone" /><span>Ontario</span><h3>Hamilton</h3><p>191 King Williams Street<br />Hamilton, ON L8R 1A7</p><a className="text-link" href="/about#hamilton-chapter">Meet the chapter directors</a></article></div></section>
+    <section className="home-chapters section" id="chapters"><div><p className="kicker">Local connections, shared purpose</p><h2>A network rooted in community.</h2><p>CELCN’s chapter planning begins in Ontario, bringing local relationships into a wider early-learning network.</p><a className="button button-teal" href="/chapters">Explore our chapters</a></div><div className="home-chapter-list"><article><Buildings className="section-icon" weight="duotone" /><span>Ontario</span><h3>Ottawa</h3><p>1 Roydon Place, Units 101 &amp; 102<br />Ottawa, ON</p><a className="text-link" href="/chapters#ottawa-chapter">Meet the chapter directors</a></article><article><Buildings className="section-icon" weight="duotone" /><span>Ontario</span><h3>Hamilton</h3><p>191 King Williams Street<br />Hamilton, ON L8R 1A7</p><a className="text-link" href="/chapters#hamilton-chapter">Meet the chapter directors</a></article></div></section>
 
     <section className="home-faq section" id="faq"><div className="faq-photo"><img src="/assets/celcn-faq.png" alt="An educator listening as a child shares a handmade butterfly" /></div><div><p className="kicker">CELCN questions, clearly answered</p><h2>Wondering where to begin?</h2><div className="faq-list">{faqs.map(([q,a])=><details key={q} name="celcn-accordion"><summary>{q}</summary><p>{a}</p></details>)}</div><button className="button button-teal" onClick={openDialog}>Ask us something</button></div></section>
 
