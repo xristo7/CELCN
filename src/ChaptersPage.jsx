@@ -28,7 +28,7 @@ const chapters = [
     phoneHref: "+16477396214",
     mapQuery: "1 Roydon Place Unit 101, Ottawa, ON",
     directors: [
-      ["Udeme Udoh", "", ["MEng Engineering", "Pastor & Community Leader", "Co-Founder Mumsfirst"]],
+      ["Udeme Udoh", "/assets/celcn-portrait-udeme.png", ["MEng Engineering", "Pastor & Community Leader", "Co-Founder Mumsfirst"]],
       ["Adekunle Oduyiga", "", ["Post Graduate Diploma in Business Administration", "Higher National Diploma in Physics Electronics", "Diploma in Cyber Security"]],
     ],
   },
