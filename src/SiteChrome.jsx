@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Baby, Buildings, ChatCircleDots, ClipboardText, EnvelopeSimple, Info, Path } from "@phosphor-icons/react";
 
 const links = [["About us", "/about", Info], ["Programs", "/programs", Baby], ["Chapters", "/chapters", Buildings], ["Admissions", "/admissions", ClipboardText], ["How it works", "/how-it-works", Path], ["Contact us", "/contact", ChatCircleDots]];
-const mobileLinks = [...links.slice(0, 4), ["Parent handbook", "/parent-handbook", ClipboardText], ...links.slice(4)];
+const mobileLinks = [["Home", "/", Info], ...links.slice(0, 4), ["Parent handbook", "/parent-handbook", ClipboardText], ...links.slice(4)];
 
 export function SiteHeader({ overlay = false }) {
   const [open, setOpen] = useState(false);

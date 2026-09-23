@@ -13,8 +13,8 @@ const chapters = [
     phoneHref: "+14377273420",
     mapQuery: "191 King William Street, Hamilton, ON L8R 1A7",
     directors: [
-      ["Yvonne Otiteh", "/assets/celcn-portrait-1.png", ["BSc Engineering", "Certificate in Project Management", "Diploma in Community Social Worker"]],
-      ["Jennifer Pere Ajuwa", "/assets/celcn-portrait-2.png", ["BSc Political Science", "Diploma in PSW", "Diploma in Community Social Worker", "Diploma in ECA"]],
+      ["Jennifer Pere Ajuwa", "/assets/celcn-portrait-1.png", ["BSc Political Science", "Diploma in PSW", "Diploma in Community Social Worker", "Diploma in ECA"]],
+      ["Yvonne Otiteh", "/assets/celcn-portrait-2.png", ["BSc Engineering", "Certificate in Project Management", "Diploma in Community Social Worker"]],
       ["Isoken Sikpojie", "/assets/celcn-portrait-3.png", ["Computer Science", "Mental Health", "Coaching Program"]],
     ],
   },
